@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Update student</h2>
+  <form method="POST" action="/update">
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Enter username"
+        name="username"
+        value="{{username}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="fullName">Full name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        placeholder="Enter full name "
+        name="fullName"
+        value="{{fullName}}"
+      />
+    </div>
+
+    {{#if isError}}
+      <div class="alert alert-danger" role="alert">
+        {{{error}}}
+      </div>
+    {{/if}}
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

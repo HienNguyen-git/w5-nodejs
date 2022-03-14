@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="mb-3">Student list</h1>
+  <a class="btn btn-primary mb-3" href="/add">Add new student</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Full name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each students}}
+        <tr>
+          <td>{{username}}</td>
+          <td>{{fullName}}</td>
+          <td>
+            <p>
+              <a href="/update/{{username}}">Update</a>
+              |
+              <a
+                href="/delete/{{id}}"
+                onclick="return confirm('Are you sure to delete {{fullName}} ?');"
+              >Delete</a>
+            </p>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
